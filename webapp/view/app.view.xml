@@ -1,0 +1,67 @@
+<mvc:View controllerName="todo.controller.app" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"  xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns="sap.m" >
+	<App>
+		<pages>
+			<Page title="{i18n>title}" >
+				<content>
+					<l:Grid
+					hSpacing="2"
+					defaultSpan="L6 M6 S10"
+					class="sapUiMediumMarginTopBottom"
+					>
+					<l:content>
+						<f:SimpleForm 
+						editable="true"
+						layout="ResponsiveGridLayout"
+						labelSpanS="3"
+						emptySpanXL="0"
+						emptySpanL="4"
+						emptySpanM="0"
+						emptySpanS="0"
+						columnsL="2"
+						columnsM="2"
+						class="clBg"
+						>
+							<f:content>
+								<Toolbar>
+									<Title text="Add to list Form" level="H2" titleStyle="H2"/>
+									<ToolbarSpacer />
+								</Toolbar>
+								<Label text="Album Id" />
+								<Input value="" id="idAlbum"/>
+								<Label text="Id" />
+								<Input value="" id="idText"/>
+								<Label text="Title" />
+								<Input value="" id="idTitle"/>
+							</f:content>
+							
+							<Button text="Submit" press="onSubmit"/>
+						</f:SimpleForm>
+						
+						<List
+						id="idlist"
+						enableBusyIndicator="true"
+						headerText="List"
+						growing="true"
+						items="{/Dummy}"
+						class="clBg sapUiContentPadding"
+						mode="Delete"
+						delete="handleDelete"
+						>
+							<items>
+								<StandardListItem
+									title="{title}"
+									description="{id}"
+									/>
+							</items>
+						</List>
+						
+						
+						
+						</l:content>
+					</l:Grid>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
